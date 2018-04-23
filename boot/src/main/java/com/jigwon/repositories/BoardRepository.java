@@ -7,6 +7,12 @@ import com.jigwon.models.Board;
 
 
 public interface BoardRepository extends CrudRepository<Board, Long>{
+	List<Board> findAll();
 	
-	List<Board> findByTitle(final String title);
+	List<Board> findByTitle(String title);
+	
+	List<Board> findByContent(String content);
+	
+	List<Board>	findByWriterContaining(String writer);
+	
 }
